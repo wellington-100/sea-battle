@@ -5,8 +5,7 @@ const NO_SHOT = 0;
 const SHOT = 1;
 const NO_SHIP = 0;
 const SHIP = 1;
-function render_map($map_ship, $map_state, $y)
-{
+function render_map($map_ship, $map_state, $y) {
     $html = '<div class="yDimension">';
 
     $html .= '<div class="map">';
@@ -66,7 +65,7 @@ function save_map($map_state, $map_name){
 }
 
 function load_map($map_name) {
-return json_decode(file_get_contents("./data/{$map_name}.json"), true) ;
+    return json_decode(file_get_contents("./data/{$map_name}.json"), true) ;
 }
 
 

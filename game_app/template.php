@@ -11,7 +11,9 @@
                 $attributes = $map[$ri][$ci] == 1 ? 'class="ship sq"' : 'class="sq"';
                 $attributes .= " href=\"/?shoot={$ri}x{$ci}\" "
                     ?>
-                <a <?= $attributes ?>></a>
+                <div>
+                    <a <?= $attributes ?>></a>
+                </div>
             <? } ?>
         <? } ?>
     </div>

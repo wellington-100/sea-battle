@@ -30,11 +30,6 @@ body {
     align-items: center;
     border: 1px solid #666;
     box-sizing: border-box;
-   
-}
-
-.map .ship {
-    background-color: #651;
 }
 
 .map .hit {

@@ -1,5 +1,6 @@
 <?
 $y = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'];
+
 const NO_SHOT = 0;
 const SHOT = 1;
 const NO_SHIP = 0;
@@ -17,8 +18,8 @@ function render_map($map_ship, $map_state, $y)
                 $attributes = 'class="missed sq"';
             } elseif ($map_state[$ri][$ci] == SHOT && $map_ship[$ri][$ci] == SHIP) {
                 $attributes = 'class="hit sq"';
-            }
-            
+            };
+
             $attributes .= " href=\"/?shoot={$ri}x{$ci}\" ";
             $html .= '<div><a ' . $attributes . '></a></div>';
         }
@@ -54,20 +55,19 @@ function get_coords($request) {
 
 function shoot($map, $coords) {
     if ($coords) {
-        $map[$coords[0]][$coords[1]] = 1;
+        $map[$coords[0]][$coords[1]] = SHOT;
     }
     return $map;
 }
 /////////////////////////////////////////
 
-function save_map($map, $map_name){
-    file_put_contents("./data/{$map_name}.json", json_encode($map));
+function save_map($map_state, $map_name){
+    file_put_contents("./data/{$map_name}.json", json_encode($map_state));
 }
 
 function load_map($map_name) {
 return json_decode(file_get_contents("./data/{$map_name}.json"), true) ;
 }
-
 
 
 ?>

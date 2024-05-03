@@ -1,7 +1,9 @@
 <? require_once 'lib.php'?>
-<? $map = load_map()?>
-<? $coords = get_coords($_GET)?>
-<? $map = shoot($map, $coords)?>
+<? $map_ship = load_map('map_ship')?>
+<? $map_state = load_map('map_state')?>
+
+<? //$coords = get_coords($_GET)?>
+<? //$map = shoot($map, $coords)?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,12 +13,12 @@
         <link rel="stylesheet" href="css/app.css">
     </head>
     <body>
-        <? print (render_map($map, $y))?>
+        <? print (render_map($map_ship, $map_state, $y))?>
         
     </body>
     </html>
     
-<? save_map($map)?>
+<? // save_map($map)?>
 
 
 

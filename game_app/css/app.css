@@ -37,6 +37,17 @@ body {
     background-color: #651;
 }
 
+.map .hit {
+    background-image: url(../i/hit.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.map .missed {
+    background-image: url(../i/missed.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .x {
     width: 500px;
     height: 50px;

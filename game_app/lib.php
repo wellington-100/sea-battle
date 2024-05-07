@@ -79,7 +79,7 @@ function load_users() {
 
 function user_exist($users, $username, $password){
     $found = false;
-    // HW: rewrite this by array_filter & git coomit variants
+    // HW: rewrite this by array_filter & git commit variants
     for ($i = 0; $i < count($users); $i++) {
         if ($users[$i]['username'] == $username && $users[$i]['password'] == $password) {
             $found = true;
@@ -88,4 +88,20 @@ function user_exist($users, $username, $password){
     }
     return $found;
 }
+
+/////////////////////////////////////////
+
+function available_username($users, $username,) {
+    $available = false;
+    for ($i = 0; $i < count($users); $i++) {
+        if ($users[$i]['username'] == $username) {
+            $available = true;
+            break;
+        }
+    }
+    return $available;
+}
+
+
+
 ?>

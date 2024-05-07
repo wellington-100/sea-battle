@@ -10,5 +10,13 @@
     {
         "username": "playerC",
         "password": "123"
+    },
+    {
+        "username": "playerD",
+        "password": "123"
+    },
+    {
+        "username": "playerE",
+        "password": "123"
     }
 ]

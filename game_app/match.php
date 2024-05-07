@@ -3,7 +3,7 @@
 
 if (empty($_GET) && empty($_POST)) {
     // 1. no data in request --> new match
-    $new_match = true;
+    $new_match = false;
 } else {
     //2. match_id in request --> existing match
     $new_match = true;
@@ -32,7 +32,7 @@ if (empty($_GET) && empty($_POST)) {
             <form action="/login-action.php" method="POST">
                 <input name="username" type="text" placeholder="username">
                 <input name="password" type="password" placeholder="password">
-                <p>no account? <a href="">create one</a></p>
+                <p>no account? <a href="/signup.php">create one</a></p>
                 <button>Enter</button>
             </form>
         </td>
@@ -40,7 +40,7 @@ if (empty($_GET) && empty($_POST)) {
             <form action="/login-action.php" method="POST">
                 <input name="username" type="text" placeholder="username">
                 <input name="password" type="password" placeholder="password">
-                <p>no account? <a href="">create one</a></p>
+                <p>no account? <a href="/signup.php">create one</a></p>
                 <button>Enter</button>
             </form>
         </td>

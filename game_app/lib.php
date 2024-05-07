@@ -80,11 +80,11 @@ function load_users() {
 function user_exist($users, $username, $password){
     $found = false;
     // HW: rewrite this by array_filter & git coomit variants
-    for ($i = 0; $i < count($users); $i++) {
-        if ($users[$i]['username'] == $username && $users[$i]['password'] == $password) {
-            $found = true;
-            break;
-        }
+    $credentials = array_filter($users, function($user) use ($username, $password){
+        return ($user['username'] == $username && $user['password'] == $password);
+    });
+    if (count($credentials) > 0){
+        $found = true;
     }
     return $found;
 }

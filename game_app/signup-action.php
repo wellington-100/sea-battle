@@ -14,7 +14,7 @@ $credentials = [
 ];
 
 
-if ($available) {
+if (!$available) {
     print ("User already exist!!");
 } elseif ($password !== $confirm_password){
     print ("Passwords do not match!!");

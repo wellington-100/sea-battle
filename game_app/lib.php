@@ -92,10 +92,10 @@ function user_exist($users, $username, $password){
 /////////////////////////////////////////
 
 function available_username($users, $username,) {
-    $available = false;
+    $available = true;
     for ($i = 0; $i < count($users); $i++) {
         if ($users[$i]['username'] == $username) {
-            $available = true;
+            $available = false;
             break;
         }
     }

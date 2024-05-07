@@ -68,5 +68,24 @@ function load_map($map_name) {
     return json_decode(file_get_contents("./data/{$map_name}.json"), true) ;
 }
 
+/////////////////////////////////////////
 
+function load_users() {
+    return json_decode(file_get_contents("./data/users.json"), true);
+}
+
+
+/////////////////////////////////////////
+
+function user_exist($users, $username, $password){
+    $found = false;
+    // HW: rewrite this by array_filter & git coomit variants
+    for ($i = 0; $i < count($users); $i++) {
+        if ($users[$i]['username'] == $username && $users[$i]['password'] == $password) {
+            $found = true;
+            break;
+        }
+    }
+    return $found;
+}
 ?>

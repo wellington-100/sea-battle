@@ -13,8 +13,15 @@
         <link rel="stylesheet" href="css/app.css">
     </head>
     <body>
-        <? print (render_map($map_ship, $map_state, $y))?>
-        
+        <? //print (render_map($map_ship, $map_state, $y))?>
+        <div id="container">
+            <table class="navbar">
+                <tr>
+                    <td><h2>SEA BATTLE</h2></td>
+                    <td><a href="/match.php">NEW MATCH</a></td>
+                </tr>
+            </table>
+        </div>
     </body>
     </html>
     

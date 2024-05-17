@@ -86,3 +86,7 @@ body {
 .match-table form a {
     color: white;
 }
+
+.error {
+    color: red;
+}

@@ -102,6 +102,20 @@ function available_username($users, $username,) {
     return $available;
 }
 
+/////////////////////////////////////////
 
+function get_message($request) {
+    if (isset($request['message'])) {
+        $message = $request['message'];
+        return $message;
+    }
+    return false;
+}
+
+/////////////////////////////////////////
+
+function save_users($users) {
+    file_put_contents("./data/users.json", json_encode($users, JSON_PRETTY_PRINT));
+}
 
 ?>

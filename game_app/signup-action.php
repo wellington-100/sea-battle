@@ -15,12 +15,16 @@ $credentials = [
 
 
 if (!$available) {
-    print ("User already exist!!");
+    header("Location: /signup.php?message=User already exist!!");
+} elseif (strlen($username) < 3) {
+    header("Location: /signup.php?message=Username must contain at least 3 symbols");
+} elseif (strlen($password) < 3) {
+    header("Location: /signup.php?message=Password must contain at least 3 symbols");
 } elseif ($password !== $confirm_password){
-    print ("Passwords do not match!!");
+    header("Location: /signup.php?message=". urlencode("Password & confirmation do not match!"));
 } else {
     $users[] = $credentials;
-    file_put_contents("./data/users.json", json_encode($users, JSON_PRETTY_PRINT));
+    save_users($users);
     print ("Successful signup!!");
 }
 

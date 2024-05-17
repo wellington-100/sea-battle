@@ -1,9 +1,12 @@
-
+<? require_once 'lib.php'?>
+<?
+    $message = get_message($_GET);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>MATCH</title>
+    <title>SIGNUP</title>
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body>
@@ -14,6 +17,9 @@
     </tr>
     <tr>
         <td>
+            <?if ($message) {?>
+                <p class="error"><?= $message ?></p>
+            <?}?>
             <form action="/signup-action.php" method="POST">
                 <input name="username" type="text" placeholder="username">
                 <input name="password" type="password" placeholder="password">
